@@ -42,7 +42,7 @@ function App() {
      <div>
       <p>HTTP</p>
       {allUsersHTML}
-      <AddUser/>
+      <AddUser getAllUserAxios={getAllUserAxios} />
        </div>
   );
 }

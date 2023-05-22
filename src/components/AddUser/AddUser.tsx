@@ -1,7 +1,15 @@
 import { useState } from "react"
 import'./AddUser.css'
 import axios from "axios";
-const AddUser = () => {
+
+const AddUser: React.FC<{
+       getAllUserAxios: () => void
+}> = (
+    {
+        getAllUserAxios
+
+    }
+) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -22,6 +30,8 @@ const AddUser = () => {
           }).then(
             res => {
                 console.log(' add res' , res)
+                getAllUserAxios()
+
             }
           ) .catch(err => {
             console.log('add err' , err)
